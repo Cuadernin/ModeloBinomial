@@ -85,7 +85,6 @@ def arbol(n,lista):
         plt.figure(1,figsize=(21,21))
         nx.draw(G,pos=posG,node_size=20,node_color='orange',alpha=0.8)
         nx.draw_networkx_labels(G,posG,labels=dic,font_size=4,font_weight='bold')
-        #xmax=max(xx for xx, yy in posG.values())
         xmax=n
         ymax=n*2
         plt.xlim(-1,xmax+1)
