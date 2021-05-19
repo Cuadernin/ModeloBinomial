@@ -12,15 +12,15 @@ def binomial(S,K,T,r,u,d,n,put=False,am=True):
         d (número): Probabilidad de que baje
         n (número): Total de periodos
     Returns:
-        [lista]: [valores]
+        [lista]: [Precios]
     """
     t=T/n  # tiempo entre cada periodo 
-    p=(exp(r*t)-d)/(u-d)    # -----> probbabilidad p
+    p=(exp(r*t)-d)/(u-d)    # -----> probabilidad p
     lista=[];valores=[]
     pos=-1 if put==True else 1
     for m in range(n+1):
         st=S*(u**(m))*(d**(n-m)) 
-        valores.append(max(pos*(st-K),0))
+        valores.append(max(pos*(st-K),0)) # Necesitamos solo los del ultimo periodo para empezar desde el ultimo y terminar en el P0 o C0 segun sea el caso
         for i in range(m+1):  # Aqui si necesitamos todos los valores para cada nodo
             st=S*(u**(m-i))*(d**i)
             if n<10: lista.append(f's0*u^{m-i}(d^{i})={round(st,2)}')
@@ -30,7 +30,7 @@ def binomial(S,K,T,r,u,d,n,put=False,am=True):
         for i in range(k+1):
             if am: valores[i]=max(pos*(S*u**i*d**(k-i)-K),exp(-r*t)*(p*valores[i+1]+(1-p)*valores[i]))
             else: valores[i]=exp(-r*t)*(p*valores[i+1]+(1-p)*valores[i]) # valores de la opcion segun el periodo
-    if put: 
+    if put:            # Si se analiza bien, este if sale sombrando por la paridad call-put
         put=valores[0]
         call=put-K*exp(-r*T)+S
         if am:
