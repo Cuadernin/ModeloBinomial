@@ -3,7 +3,7 @@
 <img align="left" src="https://github.com/Cuadernin/ModeloBinomial/blob/master/imagen1.jpg" height="580" width="1060"> 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-Simula el precio de un put o call a N periodos en Python y **grafica el diagrama de precios**. Para ver el codigo en R ir a [soon](https://github.com/Cuadernin).
+Calcula el valor de un put o call a N periodos en Python y **grafica el diagrama de precios**. Para ver el codigo en R ir a [soon](https://github.com/Cuadernin).
 
 ## Nota ✍(◔◡◔)
 
