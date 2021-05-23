@@ -11,6 +11,3 @@ Es posible mostrar el grafico usando otras dos librerias:
 
 * Únicamente con [Matplotlib](https://matplotlib.org/stable/index.html) y sin ayuda de otra paquetería.
 * Usando [graphviz](https://graphviz.readthedocs.io/en/stable/manual.html) que presenta más opciones de personalización que networkx. 
-
-
-**By Cuadernin**
